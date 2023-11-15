@@ -6,26 +6,54 @@ set -o nounset # Exit if variable not set.
 IFS=$'\n\t'
 
 
-commande=$1
 
-case $commande in
-null)
-  echo "pas d'argument"
-  ;;
-"init")
+function init {
   echo "fonction init"
-"add")
+}
+
+function add {
   echo "fonction add"
+}
+
+function lend {
+  echo "fonction lend"
+}
+
+function retrieve {
+  echo "fonction retrieve"
+}
+
+function list {
+  echo "fonction list"
+}
+
+function error {
+  if [[ "$1" -eq "$2" ]]
+    then
+    echo "message d'erreur"
+    exit
+  fi
+}
+
+error 0 "$#"
+
+case $1 in
+"init")
+  init
+  ;;
+"add")
+  add
   ;;
 "lend")
-  echo "fonction lend"
+  lend
   ;;
 "retrieve")
-  echo "fonction retrieve"
+  retrieve
   ;;
 "list")
-  echo "fonction list"
+  list
+  ;;
+*)
+  echo "message d'erreur"
   ;;
 esac
-
-
