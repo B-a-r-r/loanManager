@@ -50,7 +50,7 @@ function lunch()
         esac
 }
 
-
+#  This function initializes the database
 function init() 
 {
         blankDB='{\n      "item": [],\n      "lent": [] \n}'
@@ -75,24 +75,27 @@ function init()
         fi
 }
 
-
+# This function adds an item to the database
 function add {
   echo "fonction add"
 }
 
+# This function adds an item to the list of loaned items
 function lend {
   echo "fonction lend"
 }
 
+# This function removes an item from the list of loaned items
 function retrieve {
   echo "fonction retrieve"
 }
 
+#  This function displays the content of an article
 function list {
   echo "fonction list"
 }
 
-
+#  This function sends a error message according to the parameters given to it
 function error {
   if [[ "$1" -ne "$2" ]]
     echo "message d'erreur"
